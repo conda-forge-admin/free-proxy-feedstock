@@ -10,7 +10,7 @@ source:
   sha256: ca8b9aa42c31db8b4fb4aa299c830cd094768cc2d88bee3d9a5422be68df4f8d
 
 build:
-  number: 0
+  number: 1
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv
 
@@ -26,6 +26,10 @@ requirements:
 test:
   imports:
     - fp
+  commands:
+    - pip check
+  requires:
+    - pip
 
 about:
   home: https://github.com/jundymek/free-proxy
